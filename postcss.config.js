@@ -1,5 +1,10 @@
 module.exports = {
   plugins: {
-    autoprefixer: {}
+    autoprefixer: {
+      browsers: ['last 5 versions']
+    },
+    'postcss-px2rem': {
+      remUnit: 37.5
+    }
   }
 }

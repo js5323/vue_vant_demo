@@ -1,5 +1,14 @@
 # B-blueriver-simple-ui
 
+
+## router meta introduction
+````
+ passAuth： 是否跳过登录验证
+````
+
+
+##
+
 ## Project setup
 ```
 npm install
