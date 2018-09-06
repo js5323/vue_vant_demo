@@ -1,7 +1,7 @@
 <template>
     <div class="loading-wrap" v-if="show">
         <div class="loading-inner">
-            加载中
+            <slot>加载中</slot>
         </div>
     </div>
 </template>

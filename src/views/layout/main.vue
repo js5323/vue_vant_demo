@@ -10,12 +10,15 @@
             <van-tabbar-item icon="records" info="5">标签</van-tabbar-item>
             <van-tabbar-item icon="gold-coin" info="20">标签</van-tabbar-item>
         </van-tabbar>
-        <loading :show="isShowLoading" />
+        <main-loading :show="isShowLoading" >
+            <van-loading type="spinner" />
+        </main-loading>
     </div>
 </template>
 
 <script>
-import loading from '@/components/loading'
+import mainLoading from '@/components/loading'
+import { Loading } from 'vant';
 import {mapGetters} from 'vuex'
 
 const pathMap = {
@@ -24,7 +27,8 @@ const pathMap = {
 }
 export default {
   components: {
-    loading
+    mainLoading,
+    [Loading.name]: Loading
   },
   data () {
     return {
