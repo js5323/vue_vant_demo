@@ -10,15 +10,22 @@
             <van-tabbar-item icon="records" info="5">标签</van-tabbar-item>
             <van-tabbar-item icon="gold-coin" info="20">标签</van-tabbar-item>
         </van-tabbar>
+        <loading :show="isShowLoading" />
     </div>
 </template>
 
 <script>
+import loading from '@/components/loading'
+import {mapGetters} from 'vuex'
+
 const pathMap = {
   '/': 0,
   '/hello': 1
 }
 export default {
+  components: {
+    loading
+  },
   data () {
     return {
       transitionName: 'slide-left',
@@ -31,6 +38,9 @@ export default {
       const fromDepth = from.path.split('/').length
       this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
     }
+  },
+  computed: {
+    ...mapGetters(['isShowLoading'])
   }
 }
 </script>

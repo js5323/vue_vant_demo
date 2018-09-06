@@ -12,6 +12,10 @@ const mutations = {
   }
 }
 
+const getters = {
+  isShowLoading: state => state.isLoading
+}
+
 const actions = {
   updateLoading ({ commit }, data) {
     commit(types.APP_UPDATE_LOADING, data)
@@ -25,6 +29,7 @@ const actions = {
 }
 
 export default {
+  getters,
   state,
   mutations,
   actions

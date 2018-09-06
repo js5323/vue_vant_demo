@@ -25,11 +25,12 @@
 </template>
 
 <script>
+import areaList from '@/data/area'
 export default {
   name: 'home',
   data() {
     return {
-      areaList: [],
+      areaList,
       searchResult: []
     }
   },
