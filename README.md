@@ -1,4 +1,4 @@
-# B-blueriver-simple-ui
+# vue-vant-simple-ui
 
 
 ## router meta introduction
