@@ -3,11 +3,12 @@ import App from './App.vue'
 import router from '@/router/index/index'
 import store from '@/store/index'
 import 'amfe-flexible'
+import 'fastclick'
 
 // // 引用公用组件
-import { NavBar, Tabbar, TabbarItem, Button } from 'vant'
+import { NavBar, Tabbar, TabbarItem, Button, AddressEdit, Toast } from 'vant'
 
-[NavBar, Tabbar, TabbarItem, Button].forEach(item => Vue.use(item))
+[NavBar, Tabbar, TabbarItem, Button, AddressEdit, Toast].forEach(item => Vue.use(item))
 
 import('@/styles/index.less')
 

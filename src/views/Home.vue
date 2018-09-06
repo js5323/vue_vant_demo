@@ -7,19 +7,19 @@
                 left-arrow
         />
 
-        <div class="home"></div>
 
-        <van-button :block="true" type="primary">hello</van-button>
-        <van-button :block="true" type="danger">hello</van-button>
-        <van-button :block="true" type="default">hello</van-button>
-        <van-button :block="true" type="warning">hello</van-button>
+        <van-address-edit
+                :area-list="areaList"
+                show-postal
+                show-delete
+                show-set-default
+                show-search-result
+                :search-result="searchResult"
+                @save="onSave"
+                @delete="onDelete"
+                @change-detail="onChangeDetail"
+        />
 
-        <van-tabbar v-model="active">
-            <van-tabbar-item icon="shop">标签</van-tabbar-item>
-            <van-tabbar-item icon="chat" dot>标签</van-tabbar-item>
-            <van-tabbar-item icon="records" info="5">标签</van-tabbar-item>
-            <van-tabbar-item icon="gold-coin" info="20">标签</van-tabbar-item>
-        </van-tabbar>
 
     </div>
 </template>
@@ -27,9 +27,28 @@
 <script>
 export default {
   name: 'home',
-  data () {
+  data() {
     return {
-      active: 0
+      areaList: [],
+      searchResult: []
+    }
+  },
+  methods: {
+    onSave() {
+      this.$toast('save');
+    },
+    onDelete() {
+      this.$toast('delete');
+    },
+    onChangeDetail(val) {
+      if (val) {
+        this.searchResult = [{
+          name: '黄龙万科中心',
+          address: '杭州市西湖区'
+        }];
+      } else {
+        this.searchResult = [];
+      }
     }
   }
 }
